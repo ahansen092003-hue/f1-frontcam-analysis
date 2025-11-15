@@ -3,11 +3,17 @@ __pycache__/
 *.py[codz]
 *$py.class
 
-#Vids
-.mp4
+#Images
+*.png
+*.jpg
+*.jpeg
+*.mp4
+Outputs/
+Inputs/
 
 # Models
-.pt
+*.pt
+models/
 
 # C extensions
 *.so
