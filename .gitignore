@@ -10,10 +10,11 @@ __pycache__/
 *.mp4
 Outputs/
 Inputs/
+data/
 
 # Models
-*.pt
-models/
+#*.pt
+#models/
 
 # C extensions
 *.so
