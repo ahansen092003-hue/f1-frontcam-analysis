@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Data files
+data/input/*
+data/cache/*
+!data/input/.gitkeep
+!data/cache/.gitkeep
+
+# Output files
+output/videos/*
+output/detections/*
+!output/videos/.gitkeep
+!output/detections/.gitkeep
+
+# Models (large files)
+models/*.pt
+models/*.onnx
+!models/.gitkeep
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log

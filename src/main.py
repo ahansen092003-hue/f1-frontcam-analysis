@@ -4,8 +4,8 @@ import os
 import numpy as np
 import sys
 
-from detector import Detector
-from video_processor import VideoProcessor
+from .detector import Detector
+from .video_processor import VideoProcessor
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -27,4 +27,5 @@ if __name__ == "__main__":
             break
 
         results = detector.detect(frame)
+        print(results)
         processor.write_frame(frame)

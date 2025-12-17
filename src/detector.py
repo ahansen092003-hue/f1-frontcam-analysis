@@ -2,7 +2,7 @@ import cv2
 from pathlib import Path
 from ultralytics import YOLO
 
-from config import YOLOV8S_MODEL_PATH
+from .config import YOLOV8S_MODEL_PATH
 
 class Detector:
     def __init__(self, confidence_threshold, model_path=YOLOV8S_MODEL_PATH, target_class=[2]):
