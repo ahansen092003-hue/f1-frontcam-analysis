@@ -16,15 +16,6 @@ Computer vision pipeline for automated Formula 1 car detection in onboard cockpi
 
 ## Quick Start
 
-### Local Development
-```bash
-# Install dependencies
-pip install -r requirements.txt
-
-# Run detection
-python -m src.main <video_filename> [confidence_threshold]
-```
-
 ### Docker
 ```bash
 # Using docker-compose (recommended)
@@ -37,6 +28,15 @@ docker run --rm \
   -v $(pwd)/models:/app/models \
   -v $(pwd)/output:/app/output \
   f1-analysis testvid1.mp4 0.15
+```
+
+### Local Development
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run detection
+python -m src.main <video_filename> [confidence_threshold]
 ```
 
 ## Project Structure
