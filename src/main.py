@@ -1,15 +1,13 @@
-from ultralytics import YOLO
 import cv2
-import os
-import numpy as np
 import sys
+import time
 
 from .detector import Detector
 from .video_processor import VideoProcessor
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Too few args. Usage: python main.py <input_path> [confidence_threshold]")
+        print("Too few args. Usage: python -m src.main <input_path> [confidence_threshold]")
         sys.exit(1)
 
     video_filename = sys.argv[1]
@@ -21,7 +19,14 @@ if __name__ == "__main__":
     processor = VideoProcessor(video_filename)
     detector = Detector(confidence_threshold=confidence)
     
+    start_time = time.time()  
+    max_duration = 20
+    
     while True:
+        if time.time() - start_time > max_duration:
+            print(f"Reached {max_duration} second limit. Stopping.")
+            break
+        
         frame = processor.read_frame()
         if frame is None:
             break
