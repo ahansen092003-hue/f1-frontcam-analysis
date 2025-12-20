@@ -1,14 +1,55 @@
-## F1 Front Camera Analysis (Work in Progress)
+# F1 Front Camera Analysis
 
-This project explores computer vision analysis on Formula 1 onboard
-front-camera footage.
+Computer vision pipeline for automated Formula 1 car detection in onboard cockpit footage using YOLOv8.
 
-docker build -t f1-analysis .   
+## Features
+- Real-time car detection using YOLOv8
+- Configurable confidence thresholds
+- Bounding box visualization
+- Docker containerization for reproducible deployment
 
+## Technologies
+- Python 3.10
+- YOLOv8 (Ultralytics)
+- OpenCV
+- Docker
+
+## Quick Start
+
+### Local Development
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run detection
+python -m src.main <video_filename> [confidence_threshold]
+```
+
+### Docker
+```bash
+# Using docker-compose (recommended)
 docker-compose up
 
-docker run --rm \                                                       
-  -v /Users/ahansen/Desktop/f1-frontcam-analysis/data:/app/data \
-  -v /Users/ahansen/Desktop/f1-frontcam-analysis/models:/app/models \
-  -v /Users/ahansen/Desktop/f1-frontcam-analysis/output:/app/output \
+# Or build and run manually
+docker build -t f1-analysis .
+docker run --rm \
+  -v $(pwd)/data:/app/data \
+  -v $(pwd)/models:/app/models \
+  -v $(pwd)/output:/app/output \
   f1-analysis testvid1.mp4 0.15
+```
+
+## Project Structure
+```
+├── src/               # Source code
+├── data/input/        # Input videos
+├── output/videos/     # Processed videos
+├── models/            # YOLO models
+└── Dockerfile         # Container definition
+```
+
+## Future Work
+- Multi-object tracking across frames
+- Speed estimation from position changes
+- Distance calculation using camera calibration
+- Track positioning analysis

@@ -8,4 +8,6 @@ services:
       - ./data:/app/data
       - ./models:/app/models
       - ./output:/app/output
+    environment:
+      - YOLO_CONFIG_DIR=/app/.config
     command: ["testvid1.mp4", "0.15"]
