@@ -38,3 +38,6 @@ if __name__ == "__main__":
         
         print(results)
         processor.write_frame(frame)
+        
+    print("Processing complete.")
+    processor.release()
