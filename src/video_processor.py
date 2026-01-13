@@ -25,6 +25,7 @@ class VideoProcessor:
         return None
 
     ##For editing later
+    
     def write_frame(self, frame):
         self.writer.write(frame)
         
