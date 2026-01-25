@@ -1,5 +1,4 @@
 import cv2
-from pathlib import Path
 from .config import INPUT_DIR, VIDEOS_DIR
 
 class VideoProcessor:
