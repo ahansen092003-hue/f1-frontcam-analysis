@@ -11,6 +11,10 @@ VIDEOS_DIR = OUTPUT_DIR / "videos"
 
 YOLOV8S_MODEL_PATH = PROJECT_ROOT / "models" / "yolov8s.pt"
 
+FOCAL_LENGTH = 1685
+F1_TIRE_DIAMETER = 0.72  # meters
+F1_CAR_HEIGHT = 0.95  # meters
+TIRE_HEIGHT_RATIO = 0.6
 
 for directory in [DATA_DIR, OUTPUT_DIR, SRC_DIR, CACHE_DIR, INPUT_DIR, DETECTIONS_DIR, VIDEOS_DIR]:
     directory.mkdir(parents=True, exist_ok=True)
